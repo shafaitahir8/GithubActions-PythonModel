@@ -1,0 +1,572 @@
+Description,Class
+"Created webflow to HubSpot and Mailchimp to HubSpot apps.
+
+Note: As you can see connected app cards are not bottom aligned, It's due to the different sizes of icons. We have already conveyed this to the designer He is creating the icons with the same size, So the alignment issue will be resolved.
+@ahmadziaKhokar will update the icons on HubSpot.",Merged
+"Fields are added, Address string converted to street address, city, zip, state.",Merged
+Fixed the regex to identify all components as well as remove spaces. Removing spaces with Regex is more efficient than using the trim() string method as per the RAM model.,Merged
+"Overview
+Refactored the field mapping tab
+
+Files changed, added, or deleted
+Files modified
+src/assets/css/styles.css - Added the grayish background for input fields
+src/components/GlobalStyles.tsx - Added the paragraph variant and badgeplus
+src/components/Screens/AppsSettings/Connections.tsx - Used global styles
+src/components/Screens/AppsSettings/Overview.tsx - Added the global styles and i18n
+src/components/Screens/AppsSettings/index.tsx - Added the field mapping tab
+src/components/Screens/BaseScreen/index.tsx - Removed footer
+en.json - Added translation
+
+Files added
+src/components/Screens/AppsSettings/FieldMappingForm.tsx - Added the fiel for field mapping form
+
+Files deleted
+src/forestbridge.jpg - Deleted the file
+
+Screenshot/Video
+image",Merged
+"Overview
+Refactored the app settings
+
+Files changed, added, or deleted
+Files modified
+src/assets/css/styles.css - Removed important
+src/components/Screens/AppsSettings/Connections.tsx - Created separate component for list
+src/components/Screens/AppsSettings/FieldMappingForm.tsx - Added field mapping form component
+
+Files added
+src/components/Screens/AppsSettings/ConnectionsList.tsx - Added new file for connection list
+
+Screenshot/Video
+image",Merged
+"Overview
+Converted integration connect screen component to connect app screen
+
+Files changed, added, or deleted
+Files modified
+src/App.tsx - updated paths
+src/components/Screens/AppConnectScreen/index.tsx - Updated IntegrationConnectScreen
+en.json - removed unused translation json keys",Merged
+"Overview
+moved field mapping files to field mapping directories and changed the app connect link
+
+Files changed, added, or deleted
+Files modified
+src/components/Screens/ActivateConnectScreen/FieldMappingForm/index.tsx - file moved to directory
+src/components/Screens/AppsSettings/FieldMapping/FieldMappingForm.tsx - file moved to directory
+src/components/Screens/HomeScreen/index.tsx - changed the link",Merged
+"Overview
+Refactored apps component home component,
+
+Files changed, added, or deleted
+Files modified
+src/components/AppsCard/index.tsx - Added custom classes
+src/components/Screens/AppConnectScreen/index.tsx - Changed app connect screen
+
+Files added
+src/components/Screens/HomeScreen/AvailableApps/index.tsx - Created available apps component
+src/components/Screens/HomeScreen/ConnectedApps/index.tsx - Created connected apps component
+src/components/Screens/HomeScreen/RequestAppCard/index.tsxx - Created request apps component
+src/components/ConnectsCard/index.tsx - Added reusable connects card component
+src/components/Screens/AppConnectScreen/AppConnectCardHeader/index.tsx - Added reusable app connects card header component
+src/components/Screens/HomeScreen/index.tsx -Move code to reusable component",Merged
+"Overview
+Added cognito feature which enables only logged in users to view app screen, get user details an d logout the user. Redirect unauthorized users
+
+Files changed, added, or deleted
+Files modified
+src/App.tsx - Get user info by using token
+constants/index.tsx - Added redirect, get info and logout urls
+src/components/Navbar/ProfileMenu/index.tsx - showed user info
+
+Files added
+.zip - Some .zip files are added due to installation of axios
+
+src/utils/index.ts - Added new utils file, which is used to get the user info and logout the user functionality
+
+Screenshot/Video",Merged
+"Overview
+Added the changed password section in profile
+
+Files changed, added, or deleted
+Files modified
+GlobalStyles - Added Div and font-size
+ProfileDetails.tsx - Added reset password screen section
+en.json - Added new translation
+
+Files added
+ResetPassword/index - Added new file for change password section
+
+Screenshot/Video",Merged
+"Overview
+Created a reusable component and used its variants in AvailableApps and ProfileDetails
+
+Files changed, added, or deleted
+Files modified
+AvailableApps/index.tsx - Used reusable Card component
+ProfileDetails.tsx - Used reusable Card component
+
+Files added
+Card/index - Added new file for reusable Card component
+
+Screenshot/Video",Merged
+"Overview
+Replaced hard-coded font sizes and weights from all component levels with CSS variables.
+Use the rem unit for the font sizes.
+Added the variables in :root in the styles.css file.
+
+Files changed, added, or deleted
+Remove index.css, which is not in use.
+Files modified
+style.css, add CSS variables in :root
+GlobalStyles.tsx
+src/components/Navbar/Notifications/styles.tsx
+src/components/Navbar/ProfileMenu/styles.tsx
+src/components/Screens/ActivateConnectScreen/styles.tsx
+src/components/Screens/AppsSettings/ConnectionsList.tsx
+src/components/Screens/AppsSettings/styles.tsx
+src/components/Screens/BaseScreen/styles.tsx
+src/components/Screens/BillingScreen/styles.tsx
+src/components/Screens/BoilerplateScreen/styles.tsx
+src/components/Screens/ConnectPlatformScreen/styles.tsx
+src/components/Screens/ContactScreen/styles.tsx
+src/components/Screens/DemoScreen/styles.tsx
+src/components/Screens/ProfileScreen/styles.tsx
+src/components/Table/styles.tsx
+src/components/Tabs/styles.tsx
+Files added
+No new file was added.
+
+Screenshot/Video",Closed
+"Overview
+Updated the link colors and fix the spacing issue on the connections tab in the settings.
+
+Files changed, added, or deleted
+index.css
+Files modified
+src/assets/css/styles.css , Updated global link color.
+src/components/Screens/AppsSettings/ConnectionsList.tsx , remove the extra spacing between platform connect links.
+Files added
+No files were added.
+
+Screenshot/Video",Merged
+"Overview
+Edits for user menu
+Remove the pro tag next to the user name.
+Edits for profile tab:
+Remove the edit profile form.
+Redirect the Edit profile button to the Contact Us page.
+Redirect the Change password to the Contact Us page.
+Edits for Billing tab:
+Remove billing history card.
+Add a paragraph under the plan card for how we will send billing details to the users.
+Edits for Contact Us page
+Add two options in the form dropdown, which should selected when the user redirects from the Edit profile button or the Change password button.
+Files changed, added, or deleted
+components/Navbar/ProfileMenu/index.tsx remove pro tag.
+components/Screens/BillingScreen/index.tsx Remove the billing history card and add a paragraph under the plan card.
+components/Screens/BillingScreen/styles.tsx add paragraph styling
+components/Screens/ContactScreen/index.tsx update the form and add two more options
+src/services/translations/en.json add billing details paragraph.
+Files modified
+README.md - Added or updated something
+
+Files added
+NEW_FILE.md - Added new file for ABC reasons
+
+Screenshot/Video
+",Merged
+"Overview
+Removed the token based logic ( Get user info, redirect user )
+
+Files changed, added, or deleted
+Files modified
+App.tsx - removed redirection , get user info and protected routes logic
+src/components/Navbar/ProfileMenu/index.tsx: Removed token based logic to show user info and showed hard coded details
+App.tsx - removed redirection
+src/utils/index.ts: Removed authorization logic
+
+Files deleted
+src/hooks/fetchUserDetails.ts - Removed due to token based logic",Merged
+"Overview
+Integrated the apps api to show the available apps
+
+Files changed, added, or deleted
+Files modified
+src/actions/index.ts - Added actions for get apps
+src/actions/types.ts - Added types for get apps
+src/api/available-apps.ts - Added or updated something
+src/utils/index.ts - Updated the logout URL
+`tsconfig.json - Added aliases for utils and actions
+
+Files added
+src/api/available-apps.ts - Added new file to call the get apps API
+src/api/fetch.ts: Added a new file to call apis through fetch
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx: File added to show the available apps dynamically
+src/components/Skeleton/index.tsx: Created reusable skeleton component
+src/reducers/GetAvailableApps.ts: Get apps reducer
+src/sagas/available-apps.ts: get apps saga
+
+Screenshot/Video",Merged
+"Overview
+Updated a description on the Contact Us page.
+
+Files changed, added, or deleted
+Files modified
+src/services/translations/en.json - Updated the paragraph in this file.
+
+Files added
+NO
+Screenshot/Video
+",Merged
+"Overview
+Create a new component for embedding HubSpot forms.
+
+Files changed, added, or deleted
+Files modified
+src/components/Screens/ContactScreen/index.tsx - Render the HubSpot form component and remove all unused code.
+
+Files added
+src/components/HubSpotForm/styles.tsx - Added form styling.
+src/components/HubSpotForm/index.tsx - HubSpot form component
+
+Screenshot/Video",Merged
+"Overview
+Change approach to embed HubSpot form in React TyprScript.
+Removed the Connect Screen steps and added the HubSpot form as the next step.
+
+Files changed, added, or deleted
+Files modified
+src/components/HubSpotForm/index.tsx - Update the code to embed HubSpot form.
+src/components/Screens/ConnectPlatformScreen/styles.tsx Added form description styling.
+src/components/Screens/ContactScreen/index.tsx Render HubSpot form as a component.
+src/services/translations/en.json Add title and description for Connect Screen page.
+
+Files added
+src/global.d.ts - To fix this error S2339: Property 'hbspt' does not exist on type 'Window & typeof globalThis'. 
+
+Screenshot/Video",Closed
+"…ed generics and responses interfaces
+
+Overview
+Integrated user details api, showed description and apps name, and ed generics and responses interfaces
+
+Files changed, added, or deleted
+Files modified
+src/actions/index.ts - Added responses type
+src/actions/types.ts: Added types
+src/api/user.ts: Fetch user details
+src/components/Header/Header.tsx: Get the user details
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx: Showed description and name
+src/components/Screens/HomeScreen/AvailableApps/index.tsx: Used generics
+src/reducers/GetAvailableApps.ts: set the types
+src/reducers/index.ts: Added the types
+`src/sagas/user.ts: Added user saga",Merged
+"Overview
+Used the short description on the apps details on home.
+
+Files changed, added, or deleted
+Files modified
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx - Used the short_description key.
+
+Files added
+None
+
+Screenshot/Video",Merged
+"Overview
+integrate connected apps api, and showed apps, showed title on available apps, showed name and email on profile dropdown,
+
+Files changed, added, or deleted
+Files modified
+src/actions/index.ts - Added connected apps actions
+src/actions/types.ts - Added connected apps types
+src/api/apps.ts - Added connected apps api
+src/components/Navbar/ProfileMenu/index.tsx - Added email and name
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx - Added connected apps
+src/components/Screens/HomeScreen/AvailableApps/index.tsx - Added app types
+src/components/Screens/HomeScreen/ConnectedApps/index.tsx - Showed connected apps
+
+Files added
+src/reducers/GetConnectedApps.ts - Added connected apps reducer
+src/sagas/connected-apps.ts - Added connected apps saga",Merged
+"HubSpot embedded form.
+
+Overview
+Automatically populate the hidden email field in the HubSpot embedded form using logged-in user data.
+
+Files changed, added, or deleted
+Files modified
+src/components/HubSpotForm/index.tsx - fetch user data and populate the email field.
+src/global.d.ts - Added a global variable to select the email input field and populate the value using JavaScript.
+
+Files added
+NO.
+
+Screenshot/Video",Merged
+"Overview
+Removed all unused screens, components and links.
+
+Files changed, added, or deleted
+Files modified
+src/App.tsx - Removed unused screens.
+src/components/Navbar/Navbar.tsx - Removed Notification Component.
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx - Removed connected app card link and NavLink component.
+
+Files added
+NO
+
+Screenshot/Video",Merged
+"Overview
+Updated the ConnectPlatformScreen URL router and created a relation between the page title and the app title by using the useParams hook. When users click on any available app card, the app title will become the page title on the connect platform screen.
+
+Files changed, added, or deleted
+Files modified
+src/App.tsx - Updated the component path to track the app title.
+src/components/Screens/ConnectPlatformScreen/index.tsx - Used the useParams hook to fetch the app title to render as page title.
+src/components/Screens/HomeScreen/AvailableApps/apps.tsx - Update the app connect button URL and replace the spaces by using RegEx replace function.
+
+Files added
+No
+
+Screenshot/Video",Merged
+"Overview
+Populated the user details in the profile screen and removed extra components and code from the billing screen by adding a paragraph and button to content us for billing invoice. When the user clicks on Contact us for the billing button, it will redirect the user to the Content Us page with the selected purpose of Billing Invoice.
+
+Files changed, added, or deleted
+Files modified
+src/components/Screens/BillingScreen/index.tsx - Remove the plan card and cancel and upgrade plan button.
+src/components/Screens/ProfileScreen/ProfileDetails.tsx - Updated the user data with the data from the backend
+
+Files added
+NEW_FILE.md - Added new file for ABC reasons
+
+Screenshot/Video",Merged
+"Overview
+Hosted app logos on the hubspot test portal and fetched icons using backend data.
+
+Files changed, added, or deleted
+Files modified
+README.md - Added or updated something
+
+Files added
+src/components/AppIcon/index.tsx - New component.
+src/components/AppIcon/styles.tsx - Styling
+
+Screenshot/Video",Merged
+"Overview
+Added back Contact platform form description. Re-position the Contact for billing button on the billing tab. Added missing styling for submit message.
+
+Files changed, added, or deleted
+Files modified
+src/components/HubSpotForm/styles.tsx - Change selector for styling.
+src/components/Screens/BillingScreen/index.tsx - Change the position of CTA.
+src/components/Screens/ConnectPlatformScreen/index.tsx - Added form description.
+
+Files added
+No
+
+Screenshot/Video",Merged
+"I created a basic example for the usage of Redux via Redux Toolkit as recommended by Redux's official docs.
+
+Redux Toolkit helps us in creating actions automatically, setting up Redux Dev Tools, and implementing async logic through Redux Thunks.",Closed
+Header component with navbar,Merged
+"Overview
+Added a convention section in the Readme file for describing conventions related to file, directory, and image naming.
+
+Files changed, added, or deleted
+Files modified
+README.md - Added a convention section in the Readme file for describing conventions related to file, directory, and image naming.
+
+Screenshot/Video",Merged
+"integrated i18next for the translation and added resolveJsonModule in tsconfig.json to allow the imports for .json files
+
+services/translations/index.ts : This file will be responsible to handle all the translation throughout the app.",Merged
+"Files Changed/Added/Deleted
+
+layout.css: Commented the used code( We will remove this css later )
+Footer.tsx : Imported Tabs component in footer component for testing purposes
+BaseScreen/index.tsx: Added the Global wrapper and padding
+BaseScreen/styles.tsx: Added css for wrapper and padding
+Tabs: Added Tabs.tsx: Tabs Reusable compoennt
+Tabs/styles.tsx: css for tabs
+Components/index.tsx: Added Tabs component",Merged
+"Overview
+Created profile screen to show the user profile and billing details. Created the profile component to show details and change profile form. Created the reusable table component. Showed the billing history and plans component.
+
+Files changed, added, or deleted
+
+Files changed
+
+.eslintrc.js: Increased the length of characters on single line
+App.tsx: Imported the component for routing
+layout.css: Removed the commented code
+styles.css: added the font-family
+svg/index: imported CheckIcon svg
+en.json: added new translations
+BaseScreen/index: Added wrapper and main for layouts
+BaseScreen/styles: Added css for wrapper and padding for main
+Filed added
+
+BillingHistory.tsx: Added new file to show billing history
+BillingScreen/index: to show the billing screen with plan and history
+BillingScreen/styles: added style for billing screen
+ProfileDetails.tsx: Show the profile details
+ProfileForm: Shows the edit profile form
+ProfileScreen/index: Shows the Billing and profile tabs
+ProfileScreen/styles: css for the profile screen
+Table/index.tsx: Created reusable component for table
+Table/styles: added css for table
+tabs.tsx: tabs file
+check-icon.svg: added new svg icon
+Screenshots",Merged
+"Overview
+Added the contact us component which will submit the reason and message
+
+Files changed, added, or deleted
+
+Files changed
+
+App.tsx: Added route for contact us
+styles.css: Added the font-family
+en.json: Added new translation
+Files Added
+
+ContactScreen/index.tsx: Added the contact form with contact header
+ContactScreen/styles: Added css for contact screen
+Screenshots",Merged
+"Overview
+Developed integration connect screeen.
+
+Files added
+IntegrationConnectScreen/index.tsx
+IntegrationConnectScreen/skeleton.tsx
+IntegrationConnectScreen/styles.tsx
+svgs/setting-gray-icon.svg
+Files modified
+App.tsx
+en.json
+svgs/index.ts
+Screenshot/Video",Merged
+"Overview
+Added the Overview, connections and synchroniaztions tabs and also added some tokenizations
+
+Files changed, added, or deleted
+Files modified
+App.tsx - Added webflow to hubspot screen route.
+check-icon.svg - Added new filled check svg icon.
+hubspot-icon.svg - Added new hubspot icon.
+svg/index.ts - Imported new icons.
+alert/index.tsx - Added tokenizaion translation.
+modal/index.tsx - Created new modal component.
+notification/index.tsx - Added tokenizaion translation.
+contactPlatformScreen/index.tsx - Added tokenizaion translation.
+HomeScreen/index.tsx - Added tokenizaion translation and link.
+Table/index.tsx - Added dotted border variant and badge props.
+Table/styles.tsx - Added styles for dotted border variant and badge props.
+Tabs/index.tsx - Added badge props.
+
+Files added
+Connections.tsx - Created component for connections tab.
+overview.tsx - Created component for overview tab.
+SyncDetails.tsx - Created component for SyncDetails.
+Synchronization.tsx - Created component for Synchronization screen.
+WebflowToHubspotScreen/index.tsx - Created component for WebflowToHubspotScreen screen.
+translation.ts - Created a function to translate variables
+
+Screenshot",Merged
+"Overview
+Please include a summary of the changes and the related issue
+
+Files changed, added, or deleted
+Files modified
+src/assets/css/styles.css - Added missing bootstrap classes for spacing.
+src/assets/svgs/setting-gray-icon.svg - Replace icon code because of the grayscale issue.
+src/components/Modal/index.tsx - Add an attribute to vertically center the popup.
+src/components/Screens/BillingScreen/index.tsx - Update the position of the plan price heading.
+src/components/Screens/BillingScreen/styles.tsx - Add styling for plan price heading.
+src/components/Screens/ConnectPlatformScreen/index.tsx - Update the step submit actions, the step one body will hide when successful, and then the step 2 body will collapse.
+src/components/Screens/ContactScreen/index.tsx - Update the success message width.
+src/components/Screens/HomeScreen/index.tsx - Request an app card height issue fixed.
+src/components/Screens/IntegrationConnectScreen/index.tsx - Update the page UI, and make the whole page a single card. And update the setting icon position right next to the page title.
+src/components/Screens/ProfileScreen/ProfileDetails.tsx - Add functionality that when the user clicks on the edit profile button, the user details will hide.
+src/components/Screens/WebflowToHubspotScreen/Connections.tsx - Fix HubSpot logo position.
+
+Files added
+No file added
+
+Screenshot/Video
+Update the step submit actions, the step one body will hide when successful, and then the step 2 body will collapse.",Merged
+"Overview
+Prototype related changes",Merged
+"Overview
+Resolved the translation keys issues.
+
+Files changed, added, or deleted
+Files modified
+ConnectPlatformScreen/index.tsx - Added the translation keys for translation
+IntegrationConnectScreen/index.tsx - Added the translation keys and changed the path
+en.json - Added the translation missing keys
+
+Screenshot/Video",Merged
+"Overview
+Fixes the feedback changes, get alt text from i18n, change settings icon, active link, contact navigation.
+
+Files changed, added, or deleted
+Files modified
+setting-gray-icon.svg - Changed seetings icon
+Alert/index.tsx - Added alt translation
+Header.tsx - Added alt translation and added active link
+Header/styles.tsx - Imported NavLink from react-router-dom
+Nav/Navbar.tsx - Added contact us active link
+Notification/index.tsx - Added dynamic count and made bold first notification
+ProfileMenu/index.tsx - Added alt translation
+Navbar/styles.tsx - Use NavLink from react router dom
+Connections.tsx - Added alt translation
+BillingScreen/index.tsx - Added contact us navigation
+ContactPlatformScreen/index.tsx - Added alt translation
+ContactScreen/index.tsx - Added by default selected values for dropdown
+HomeScreen/index.tsx - Added alt translation and contact us link
+IntegrationContactScreen/index.tsx - Added alt translation
+ProfileDetail.tsx - Added onSuccess event to open profile details again
+ProfileForm.tsx - Removed left labels and added onSuccess function
+en.json - added new translation keys
+
+Screenshot/Video",Merged
+"Overview
+Created activate connect screen, made accordion reusable component
+
+Files changed, added, or deleted
+Files modified
+package.json - Updated webpack
+App.tsx - Added activate connect route
+src/assets/svgs/index.ts - Added new svg icons
+src/components/Screens/IntegrationConnectScreen/index.tsx: Added link to button
+en.json - Added new translation
+yarn.lock - updated webpack
+
+Files added
+src/components/Accordion/index.tsx - Added new file reusable accordion component
+src/components/AppsCard/index.tsx - Added new file reusable Apps card component
+src/components/AppsCard/styles.tsx - Added new styles file reusable Apps card component
+src/components/GlobalStyles.tsx - Added new reusable global styled components
+src/components/Screens/ActivateConnectScreen/ActivateConnectStepOne.tsx - Added new component for field map accordion step one
+src/components/Screens/ActivateConnectScreen/ActivateConnectStepTwo.tsx - Added new component for field map accordion step two
+src/components/Screens/ActivateConnectScreen/ActivatedConnect.tsx - Added new component for activated step
+src/components/Screens/ActivateConnectScreen/FieldMappingForm.tsx - Added new component for field mapping form
+src/components/Screens/ActivateConnectScreen/StepsHeader.tsx - Created steps header component
+src/components/Screens/ActivateConnectScreen/index.tsx - Added new component for activate connect screen
+
+Screenshot/Video",Merged
+"Overview
+Create reusable popover component, and used it in field mapping step of activate connect.
+
+Files changed, added, or deleted
+Files modified
+src/components/Screens/ActivateConnectScreen/FieldMappingForm.tsx - Added fields popover
+en.json - Added translation
+
+Files added
+src/components/Popover/index.tsx - Added new file for popover component
+
+Screenshot/Video",Merged
